@@ -1,6 +1,6 @@
 ﻿namespace Form1
 {
-    partial class Form1
+    partial class create
     {
         /// <summary>
         /// Required designer variable.
@@ -28,46 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.employeeidTxtbox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.firstnameTxtbox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.addressTxtbox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.birthdayTxtbox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.middlenameTxtbox = new System.Windows.Forms.TextBox();
+            this.lastnameTxtbox = new System.Windows.Forms.TextBox();
+            this.salutationCombobox = new System.Windows.Forms.ComboBox();
+            this.zipTxtbox = new System.Windows.Forms.TextBox();
+            this.provinceTxtbox = new System.Windows.Forms.TextBox();
+            this.cityTxtbox = new System.Windows.Forms.TextBox();
+            this.brgyTxtbox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.nationalityTxtbox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.phone_noTxtbox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.emailTxtbox = new System.Windows.Forms.TextBox();
+            this.jobtitleCombobox = new System.Windows.Forms.ComboBox();
+            this.departmentCombobox = new System.Windows.Forms.ComboBox();
+            this.statusCombobox = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.picturpathTxtbox = new System.Windows.Forms.TextBox();
+            this.suffixCombobox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // label1
             // 
@@ -78,13 +73,13 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Employee id:";
             // 
-            // textBox1
+            // employeeidTxtbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(105, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.employeeidTxtbox.Location = new System.Drawing.Point(105, 6);
+            this.employeeidTxtbox.Name = "employeeidTxtbox";
+            this.employeeidTxtbox.Size = new System.Drawing.Size(100, 20);
+            this.employeeidTxtbox.TabIndex = 0;
+            this.employeeidTxtbox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -95,12 +90,13 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Employee Name:";
             // 
-            // textBox2
+            // firstnameTxtbox
             // 
-            this.textBox2.Location = new System.Drawing.Point(105, 32);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.firstnameTxtbox.Location = new System.Drawing.Point(105, 32);
+            this.firstnameTxtbox.Name = "firstnameTxtbox";
+            this.firstnameTxtbox.Size = new System.Drawing.Size(100, 20);
+            this.firstnameTxtbox.TabIndex = 3;
+            this.firstnameTxtbox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label3
             // 
@@ -111,13 +107,13 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Address:";
             // 
-            // textBox3
+            // addressTxtbox
             // 
-            this.textBox3.Location = new System.Drawing.Point(106, 58);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(354, 20);
-            this.textBox3.TabIndex = 5;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.addressTxtbox.Location = new System.Drawing.Point(106, 58);
+            this.addressTxtbox.Name = "addressTxtbox";
+            this.addressTxtbox.Size = new System.Drawing.Size(354, 20);
+            this.addressTxtbox.TabIndex = 5;
+            this.addressTxtbox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label5
             // 
@@ -128,13 +124,13 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Birthday:";
             // 
-            // textBox5
+            // birthdayTxtbox
             // 
-            this.textBox5.Location = new System.Drawing.Point(106, 110);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(354, 20);
-            this.textBox5.TabIndex = 9;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.birthdayTxtbox.Location = new System.Drawing.Point(106, 110);
+            this.birthdayTxtbox.Name = "birthdayTxtbox";
+            this.birthdayTxtbox.Size = new System.Drawing.Size(354, 20);
+            this.birthdayTxtbox.TabIndex = 9;
+            this.birthdayTxtbox.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label6
             // 
@@ -145,62 +141,56 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Salutation";
             // 
-            // textBox6
+            // middlenameTxtbox
             // 
-            this.textBox6.Location = new System.Drawing.Point(211, 32);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 12;
+            this.middlenameTxtbox.Location = new System.Drawing.Point(211, 32);
+            this.middlenameTxtbox.Name = "middlenameTxtbox";
+            this.middlenameTxtbox.Size = new System.Drawing.Size(100, 20);
+            this.middlenameTxtbox.TabIndex = 12;
             // 
-            // textBox7
+            // lastnameTxtbox
             // 
-            this.textBox7.Location = new System.Drawing.Point(317, 32);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 13;
+            this.lastnameTxtbox.Location = new System.Drawing.Point(317, 32);
+            this.lastnameTxtbox.Name = "lastnameTxtbox";
+            this.lastnameTxtbox.Size = new System.Drawing.Size(100, 20);
+            this.lastnameTxtbox.TabIndex = 13;
             // 
-            // textBox8
+            // salutationCombobox
             // 
-            this.textBox8.Location = new System.Drawing.Point(424, 32);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(36, 20);
-            this.textBox8.TabIndex = 14;
+            this.salutationCombobox.FormattingEnabled = true;
+            this.salutationCombobox.Location = new System.Drawing.Point(272, 5);
+            this.salutationCombobox.Name = "salutationCombobox";
+            this.salutationCombobox.Size = new System.Drawing.Size(189, 21);
+            this.salutationCombobox.TabIndex = 15;
+            this.salutationCombobox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // comboBox1
+            // zipTxtbox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(272, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(189, 21);
-            this.comboBox1.TabIndex = 15;
+            this.zipTxtbox.Location = new System.Drawing.Point(424, 84);
+            this.zipTxtbox.Name = "zipTxtbox";
+            this.zipTxtbox.Size = new System.Drawing.Size(36, 20);
+            this.zipTxtbox.TabIndex = 19;
             // 
-            // textBox4
+            // provinceTxtbox
             // 
-            this.textBox4.Location = new System.Drawing.Point(424, 84);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(36, 20);
-            this.textBox4.TabIndex = 19;
+            this.provinceTxtbox.Location = new System.Drawing.Point(317, 84);
+            this.provinceTxtbox.Name = "provinceTxtbox";
+            this.provinceTxtbox.Size = new System.Drawing.Size(100, 20);
+            this.provinceTxtbox.TabIndex = 18;
             // 
-            // textBox9
+            // cityTxtbox
             // 
-            this.textBox9.Location = new System.Drawing.Point(317, 84);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 18;
+            this.cityTxtbox.Location = new System.Drawing.Point(211, 84);
+            this.cityTxtbox.Name = "cityTxtbox";
+            this.cityTxtbox.Size = new System.Drawing.Size(100, 20);
+            this.cityTxtbox.TabIndex = 17;
             // 
-            // textBox10
+            // brgyTxtbox
             // 
-            this.textBox10.Location = new System.Drawing.Point(211, 84);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 17;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(105, 84);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 16;
+            this.brgyTxtbox.Location = new System.Drawing.Point(105, 84);
+            this.brgyTxtbox.Name = "brgyTxtbox";
+            this.brgyTxtbox.Size = new System.Drawing.Size(100, 20);
+            this.brgyTxtbox.TabIndex = 16;
             // 
             // label4
             // 
@@ -211,12 +201,12 @@
             this.label4.TabIndex = 21;
             this.label4.Text = "Nationality:";
             // 
-            // textBox12
+            // nationalityTxtbox
             // 
-            this.textBox12.Location = new System.Drawing.Point(106, 136);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(355, 20);
-            this.textBox12.TabIndex = 20;
+            this.nationalityTxtbox.Location = new System.Drawing.Point(106, 136);
+            this.nationalityTxtbox.Name = "nationalityTxtbox";
+            this.nationalityTxtbox.Size = new System.Drawing.Size(355, 20);
+            this.nationalityTxtbox.TabIndex = 20;
             // 
             // label7
             // 
@@ -227,12 +217,12 @@
             this.label7.TabIndex = 23;
             this.label7.Text = "Contact info:";
             // 
-            // textBox13
+            // phone_noTxtbox
             // 
-            this.textBox13.Location = new System.Drawing.Point(106, 162);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(205, 20);
-            this.textBox13.TabIndex = 22;
+            this.phone_noTxtbox.Location = new System.Drawing.Point(106, 162);
+            this.phone_noTxtbox.Name = "phone_noTxtbox";
+            this.phone_noTxtbox.Size = new System.Drawing.Size(205, 20);
+            this.phone_noTxtbox.TabIndex = 22;
             // 
             // label8
             // 
@@ -261,36 +251,37 @@
             this.label10.TabIndex = 29;
             this.label10.Text = "Status:";
             // 
-            // textBox17
+            // emailTxtbox
             // 
-            this.textBox17.Location = new System.Drawing.Point(317, 162);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(144, 20);
-            this.textBox17.TabIndex = 30;
+            this.emailTxtbox.Location = new System.Drawing.Point(317, 162);
+            this.emailTxtbox.Name = "emailTxtbox";
+            this.emailTxtbox.Size = new System.Drawing.Size(144, 20);
+            this.emailTxtbox.TabIndex = 30;
             // 
-            // comboBox2
+            // jobtitleCombobox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(105, 187);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(356, 21);
-            this.comboBox2.TabIndex = 31;
+            this.jobtitleCombobox.FormattingEnabled = true;
+            this.jobtitleCombobox.Location = new System.Drawing.Point(105, 187);
+            this.jobtitleCombobox.Name = "jobtitleCombobox";
+            this.jobtitleCombobox.Size = new System.Drawing.Size(356, 21);
+            this.jobtitleCombobox.TabIndex = 31;
+            this.jobtitleCombobox.SelectedIndexChanged += new System.EventHandler(this.jobtitleTxtbox_SelectedIndexChanged);
             // 
-            // comboBox3
+            // departmentCombobox
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(105, 214);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(356, 21);
-            this.comboBox3.TabIndex = 32;
+            this.departmentCombobox.FormattingEnabled = true;
+            this.departmentCombobox.Location = new System.Drawing.Point(105, 214);
+            this.departmentCombobox.Name = "departmentCombobox";
+            this.departmentCombobox.Size = new System.Drawing.Size(356, 21);
+            this.departmentCombobox.TabIndex = 32;
             // 
-            // comboBox4
+            // statusCombobox
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(105, 241);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(356, 21);
-            this.comboBox4.TabIndex = 33;
+            this.statusCombobox.FormattingEnabled = true;
+            this.statusCombobox.Location = new System.Drawing.Point(105, 241);
+            this.statusCombobox.Name = "statusCombobox";
+            this.statusCombobox.Size = new System.Drawing.Size(356, 21);
+            this.statusCombobox.TabIndex = 33;
             // 
             // pictureBox1
             // 
@@ -300,6 +291,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(129, 125);
             this.pictureBox1.TabIndex = 34;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button1
             // 
@@ -321,44 +313,65 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Form1
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // picturpathTxtbox
+            // 
+            this.picturpathTxtbox.Location = new System.Drawing.Point(483, 84);
+            this.picturpathTxtbox.Name = "picturpathTxtbox";
+            this.picturpathTxtbox.Size = new System.Drawing.Size(100, 20);
+            this.picturpathTxtbox.TabIndex = 37;
+            this.picturpathTxtbox.TextChanged += new System.EventHandler(this.picturpathTxtbox_TextChanged);
+            // 
+            // suffixCombobox
+            // 
+            this.suffixCombobox.FormattingEnabled = true;
+            this.suffixCombobox.Location = new System.Drawing.Point(423, 32);
+            this.suffixCombobox.Name = "suffixCombobox";
+            this.suffixCombobox.Size = new System.Drawing.Size(38, 21);
+            this.suffixCombobox.TabIndex = 38;
+            // 
+            // create
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.suffixCombobox);
+            this.Controls.Add(this.picturpathTxtbox);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox17);
+            this.Controls.Add(this.statusCombobox);
+            this.Controls.Add(this.departmentCombobox);
+            this.Controls.Add(this.jobtitleCombobox);
+            this.Controls.Add(this.emailTxtbox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox13);
+            this.Controls.Add(this.phone_noTxtbox);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.nationalityTxtbox);
+            this.Controls.Add(this.zipTxtbox);
+            this.Controls.Add(this.provinceTxtbox);
+            this.Controls.Add(this.cityTxtbox);
+            this.Controls.Add(this.brgyTxtbox);
+            this.Controls.Add(this.salutationCombobox);
+            this.Controls.Add(this.lastnameTxtbox);
+            this.Controls.Add(this.middlenameTxtbox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.birthdayTxtbox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.addressTxtbox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.firstnameTxtbox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Name = "Form1";
-            this.Text = "Create Employee";
+            this.Controls.Add(this.employeeidTxtbox);
+            this.Name = "create";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -367,38 +380,39 @@
         }
 
         #endregion
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox employeeidTxtbox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox firstnameTxtbox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox addressTxtbox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox birthdayTxtbox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox middlenameTxtbox;
+        private System.Windows.Forms.TextBox lastnameTxtbox;
+        private System.Windows.Forms.ComboBox salutationCombobox;
+        private System.Windows.Forms.TextBox zipTxtbox;
+        private System.Windows.Forms.TextBox provinceTxtbox;
+        private System.Windows.Forms.TextBox cityTxtbox;
+        private System.Windows.Forms.TextBox brgyTxtbox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox nationalityTxtbox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox phone_noTxtbox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.TextBox emailTxtbox;
+        private System.Windows.Forms.ComboBox jobtitleCombobox;
+        private System.Windows.Forms.ComboBox departmentCombobox;
+        private System.Windows.Forms.ComboBox statusCombobox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox picturpathTxtbox;
+        private System.Windows.Forms.ComboBox suffixCombobox;
     }
 }
 
