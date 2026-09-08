@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Form1
 {
@@ -747,7 +748,6 @@ namespace Form1
             dset = new DataSet();
             adaptersql.Fill(dset, "assessmentTbl");
 
-
             connection.Close();
         }
 
@@ -917,3 +917,21 @@ namespace Form1
         }
     }
 }
+//create database quizDb
+
+//use quizDb
+
+//Go
+
+//create table assessmentTbl (
+//Student_Name varchar(max),
+//Student_Program varchar(max),
+//Date_Enrolled date,
+//Student_No INT primary key,
+//Year_Level varchar(max),
+//Scholar varchar(max),
+//Total_Cred_Units varchar(max),
+//Total_Tuition_Fee varchar(max),
+//Miscellaneous_Fee varchar(max),
+//Total_Other_Fee varchar(max),
+//);
