@@ -180,5 +180,11 @@ namespace Form1
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Preview viewForm = new Preview();
+            viewForm.Show();
+        }
     }
 }

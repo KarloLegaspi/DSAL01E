@@ -54,6 +54,12 @@
     </Compile>
     <Compile Include="loginDb_dbconnections.cs" />
     <Compile Include="pos_dbconnection.cs" />
+    <Compile Include="Preview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Preview.Designer.cs">
+      <DependentUpon>Preview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Quiz.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     <Compile Include="useraccount_db_connection.cs" />
     <EmbeddedResource Include="Create Employee.resx">
       <DependentUpon>Create Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preview.resx">
+      <DependentUpon>Preview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Quiz.resx">
       <DependentUpon>Quiz.cs</DependentUpon>

@@ -61,6 +61,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.picturpathTxtbox = new System.Windows.Forms.TextBox();
             this.suffixCombobox = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,6 +97,8 @@
             this.firstnameTxtbox.Name = "firstnameTxtbox";
             this.firstnameTxtbox.Size = new System.Drawing.Size(100, 20);
             this.firstnameTxtbox.TabIndex = 3;
+            this.firstnameTxtbox.Text = "First Name";
+            this.firstnameTxtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.firstnameTxtbox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label3
@@ -113,6 +116,8 @@
             this.addressTxtbox.Name = "addressTxtbox";
             this.addressTxtbox.Size = new System.Drawing.Size(354, 20);
             this.addressTxtbox.TabIndex = 5;
+            this.addressTxtbox.Text = "House No./Street/Subdivision";
+            this.addressTxtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.addressTxtbox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label5
@@ -147,6 +152,8 @@
             this.middlenameTxtbox.Name = "middlenameTxtbox";
             this.middlenameTxtbox.Size = new System.Drawing.Size(100, 20);
             this.middlenameTxtbox.TabIndex = 12;
+            this.middlenameTxtbox.Text = "Middle Name";
+            this.middlenameTxtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lastnameTxtbox
             // 
@@ -154,6 +161,8 @@
             this.lastnameTxtbox.Name = "lastnameTxtbox";
             this.lastnameTxtbox.Size = new System.Drawing.Size(100, 20);
             this.lastnameTxtbox.TabIndex = 13;
+            this.lastnameTxtbox.Text = "Last Name";
+            this.lastnameTxtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // salutationCombobox
             // 
@@ -170,6 +179,8 @@
             this.zipTxtbox.Name = "zipTxtbox";
             this.zipTxtbox.Size = new System.Drawing.Size(36, 20);
             this.zipTxtbox.TabIndex = 19;
+            this.zipTxtbox.Text = "Zip";
+            this.zipTxtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // provinceTxtbox
             // 
@@ -177,6 +188,8 @@
             this.provinceTxtbox.Name = "provinceTxtbox";
             this.provinceTxtbox.Size = new System.Drawing.Size(100, 20);
             this.provinceTxtbox.TabIndex = 18;
+            this.provinceTxtbox.Text = "Province/Region";
+            this.provinceTxtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cityTxtbox
             // 
@@ -184,6 +197,8 @@
             this.cityTxtbox.Name = "cityTxtbox";
             this.cityTxtbox.Size = new System.Drawing.Size(100, 20);
             this.cityTxtbox.TabIndex = 17;
+            this.cityTxtbox.Text = "City/Municipality";
+            this.cityTxtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // brgyTxtbox
             // 
@@ -191,6 +206,8 @@
             this.brgyTxtbox.Name = "brgyTxtbox";
             this.brgyTxtbox.Size = new System.Drawing.Size(100, 20);
             this.brgyTxtbox.TabIndex = 16;
+            this.brgyTxtbox.Text = "Barangay";
+            this.brgyTxtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -223,6 +240,8 @@
             this.phone_noTxtbox.Name = "phone_noTxtbox";
             this.phone_noTxtbox.Size = new System.Drawing.Size(205, 20);
             this.phone_noTxtbox.TabIndex = 22;
+            this.phone_noTxtbox.Text = "Telephone/Mobile No.";
+            this.phone_noTxtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
@@ -257,6 +276,8 @@
             this.emailTxtbox.Name = "emailTxtbox";
             this.emailTxtbox.Size = new System.Drawing.Size(144, 20);
             this.emailTxtbox.TabIndex = 30;
+            this.emailTxtbox.Text = "Email";
+            this.emailTxtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // jobtitleCombobox
             // 
@@ -305,7 +326,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(493, 181);
+            this.button2.Location = new System.Drawing.Point(493, 197);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 36;
@@ -333,11 +354,22 @@
             this.suffixCombobox.Size = new System.Drawing.Size(38, 21);
             this.suffixCombobox.TabIndex = 38;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(493, 168);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 39;
+            this.button3.Text = "View Data";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // create
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.suffixCombobox);
             this.Controls.Add(this.picturpathTxtbox);
             this.Controls.Add(this.button2);
@@ -413,6 +445,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox picturpathTxtbox;
         private System.Windows.Forms.ComboBox suffixCombobox;
+        private System.Windows.Forms.Button button3;
     }
 }
 
