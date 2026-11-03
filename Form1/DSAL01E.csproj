@@ -52,6 +52,12 @@
     <Compile Include="Create Employee.Designer.cs">
       <DependentUpon>Create Employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lab7_Maynilad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lab7_Maynilad.Designer.cs">
+      <DependentUpon>Lab7_Maynilad.cs</DependentUpon>
+    </Compile>
     <Compile Include="loginDb_dbconnections.cs" />
     <Compile Include="pos_dbconnection.cs" />
     <Compile Include="Preview.cs">
@@ -77,6 +83,9 @@
     <Compile Include="useraccount_db_connection.cs" />
     <EmbeddedResource Include="Create Employee.resx">
       <DependentUpon>Create Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lab7_Maynilad.resx">
+      <DependentUpon>Lab7_Maynilad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Preview.resx">
       <DependentUpon>Preview.cs</DependentUpon>
