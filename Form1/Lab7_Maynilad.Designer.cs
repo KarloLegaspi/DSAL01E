@@ -49,6 +49,7 @@
             this.txtDueDate = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label21 = new System.Windows.Forms.Label();
             this.currentchargestxtbox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -69,6 +70,7 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.txtConsumption = new System.Windows.Forms.TextBox();
@@ -96,9 +98,9 @@
             this.txtRateClass = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtBusiness = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.button7 = new System.Windows.Forms.Button();
+            this.SOAtxt = new System.Windows.Forms.TextBox();
+            this.SOMAtxt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox6.SuspendLayout();
@@ -153,6 +155,7 @@
             this.button2.TabIndex = 70;
             this.button2.Text = "SAVE";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -185,21 +188,20 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(96, 189);
+            this.label32.Location = new System.Drawing.Point(95, 186);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(161, 26);
+            this.label32.Size = new System.Drawing.Size(145, 26);
             this.label32.TabIndex = 66;
-            this.label32.Text = "STATEMENT OF ACCOUNT\r\nFor the Month Of: February 2024\r\n";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label32.Text = "STATEMENT OF ACCOUNT\r\nFor the Month Of: \r\n";
             // 
             // label31
             // 
             this.label31.AutoSize = true;
             this.label31.Location = new System.Drawing.Point(18, 166);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(162, 13);
+            this.label31.Size = new System.Drawing.Size(42, 13);
             this.label31.TabIndex = 65;
-            this.label31.Text = "SOA # 00000000003456789012";
+            this.label31.Text = "SOA # ";
             // 
             // label30
             // 
@@ -306,6 +308,13 @@
             this.groupBox4.TabIndex = 60;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "BILLING SUMMARY";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(122, 19);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.TabIndex = 44;
             // 
             // label21
             // 
@@ -497,6 +506,13 @@
             this.groupBox2.TabIndex = 58;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "METERING INFORMATION";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(122, 58);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 43;
             // 
             // label20
             // 
@@ -730,20 +746,6 @@
             this.txtBusiness.Size = new System.Drawing.Size(229, 20);
             this.txtBusiness.TabIndex = 11;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(122, 58);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 43;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(122, 19);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 44;
-            // 
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(998, 663);
@@ -754,11 +756,28 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // SOAtxt
+            // 
+            this.SOAtxt.Location = new System.Drawing.Point(66, 163);
+            this.SOAtxt.Name = "SOAtxt";
+            this.SOAtxt.Size = new System.Drawing.Size(217, 20);
+            this.SOAtxt.TabIndex = 35;
+            // 
+            // SOMAtxt
+            // 
+            this.SOMAtxt.Location = new System.Drawing.Point(183, 198);
+            this.SOMAtxt.Name = "SOMAtxt";
+            this.SOMAtxt.Size = new System.Drawing.Size(100, 20);
+            this.SOMAtxt.TabIndex = 76;
+            this.SOMAtxt.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
             // Lab7_Maynilad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1098, 720);
+            this.Controls.Add(this.SOMAtxt);
+            this.Controls.Add(this.SOAtxt);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button6);
@@ -872,5 +891,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TextBox SOAtxt;
+        private System.Windows.Forms.TextBox SOMAtxt;
     }
 }
