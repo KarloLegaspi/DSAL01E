@@ -52,13 +52,25 @@
     <Compile Include="Create Employee.Designer.cs">
       <DependentUpon>Create Employee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lab7_Maynilad.cs">
+    <Compile Include="MidtermExam.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Lab7_Maynilad.Designer.cs">
-      <DependentUpon>Lab7_Maynilad.cs</DependentUpon>
+    <Compile Include="MidtermExam.Designer.cs">
+      <DependentUpon>MidtermExam.cs</DependentUpon>
     </Compile>
     <Compile Include="loginDb_dbconnections.cs" />
+    <Compile Include="Maynilad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maynilad.Designer.cs">
+      <DependentUpon>Maynilad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mayniladreceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mayniladreceipt.Designer.cs">
+      <DependentUpon>Mayniladreceipt.cs</DependentUpon>
+    </Compile>
     <Compile Include="pos_dbconnection.cs" />
     <Compile Include="Preview.cs">
       <SubType>Form</SubType>
@@ -72,6 +84,12 @@
     <Compile Include="Quiz.Designer.cs">
       <DependentUpon>Quiz.cs</DependentUpon>
     </Compile>
+    <Compile Include="Receipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receipt.Designer.cs">
+      <DependentUpon>Receipt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Update Employee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,14 +102,23 @@
     <EmbeddedResource Include="Create Employee.resx">
       <DependentUpon>Create Employee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Lab7_Maynilad.resx">
-      <DependentUpon>Lab7_Maynilad.cs</DependentUpon>
+    <EmbeddedResource Include="MidtermExam.resx">
+      <DependentUpon>MidtermExam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maynilad.resx">
+      <DependentUpon>Maynilad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mayniladreceipt.resx">
+      <DependentUpon>Mayniladreceipt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Preview.resx">
       <DependentUpon>Preview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Quiz.resx">
       <DependentUpon>Quiz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receipt.resx">
+      <DependentUpon>Receipt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Update Employee.resx">
       <DependentUpon>Update Employee.cs</DependentUpon>
@@ -104,6 +131,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -117,6 +145,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Maynilad logo - stacked.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

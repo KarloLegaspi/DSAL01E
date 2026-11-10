@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Form1
 {
-    public partial class Lab7_Maynilad : Form
+    public partial class MidtermExam : Form
     {
         
         String connectionString = null;
@@ -34,7 +34,7 @@ namespace Form1
 
             adaptersql = new SqlDataAdapter();
             adaptersql.InsertCommand = command;
-            command.ExecuteNonQuery();
+            //command.ExecuteNonQuery();
 
             sql = "SELECT * from customerInfoTbl ";
             command = new SqlCommand(sql, connection);
@@ -66,7 +66,7 @@ namespace Form1
 
             adaptersql = new SqlDataAdapter();
             adaptersql.InsertCommand = command;
-            command.ExecuteNonQuery();
+            //command.ExecuteNonQuery();
 
             sql = "SELECT * from meterTbl ";
             command = new SqlCommand(sql, connection);
@@ -97,7 +97,7 @@ namespace Form1
 
             adaptersql = new SqlDataAdapter();
             adaptersql.InsertCommand = command;
-            command.ExecuteNonQuery();
+            //command.ExecuteNonQuery();
 
             sql = "SELECT * from paymentTbl ";
             command = new SqlCommand(sql, connection);
@@ -198,7 +198,7 @@ namespace Form1
 
         }
 
-        public Lab7_Maynilad()
+        public MidtermExam()
         {
             connectionString = "Data Source = C203-07; Initial Catalog = WaterBillDB; user id = sa; password = B1Admin123@";
             connection = new SqlConnection(connectionString);
@@ -255,7 +255,7 @@ namespace Form1
             command.ExecuteNonQuery();
             dset = new DataSet();
             adaptersql.Fill(dset, "SaveTbl");
-            dataGridView1.DataSource = dset.Tables[0];
+            //dataGridView1.DataSource = dset.Tables[0];
             connection.Close();
         }
     }
