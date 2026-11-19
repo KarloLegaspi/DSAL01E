@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Form1;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics.Contracts;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Security.Cryptography;
@@ -19,108 +21,11 @@ namespace Form1
 {
     public partial class Maynilad : Form
     {
-        private double present, previous, rate = 23.52, consumption, basic, env, msc = 1.53, beforetax, govtax, total;
         String picturepath;
         String connectionString = null;
         SqlConnection connection;
         SqlCommand command;
         DataSet dset;
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            object source = dataGridView1.DataSource;
-
-            if (source == null)
-            {
-                MessageBox.Show("No records found.");
-                return;
-            }
-
-            BindingSource bs = source as BindingSource;
-
-            if (bs == null)
-            {
-                bs = new BindingSource();
-                bs.DataSource = source;
-                dataGridView1.DataSource = bs;
-            }
-
-            IList records = bs.List;
-
-            if (records.Count == 0 ||
-        records.IsReadOnly ||
-        records.IsFixedSize)
-            {
-                MessageBox.Show("DataSource cannot be sorted directly.");
-                return;
-            }
-
-            string column = "Grade";
-            PropertyDescriptor property = TypeDescriptor.GetProperties(records[0]).Find(column, true);
-
-            if (property == null)
-            {
-                MessageBox.Show("Sorting field not found.");
-                return;
-            }
-
-            Comparison<object> compare = (a, b) =>
-            {
-                object x = property.GetValue(a);
-                object y = property.GetValue(b);
-
-                if (x == null || x == DBNull.Value)
-                    return y == null || y == DBNull.Value ? 0 : -1;
-
-                if (y == null || y == DBNull.Value)
-                    return 1;
-
-                return Comparer.DefaultInvariant.Compare(x, y);
-            };
-
-            // Apply the selected algorithm
-            bool previous = bs.RaiseListChangedEvents;
-            bs.RaiseListChangedEvents = false;
-
-            try
-            {
-                switch (comboBox1.Text)
-                {
-                    case "Bubble Sort":
-                        BubbleSort(records, compare);
-                        break;
-
-                    case "Selection Sort":
-                        SelectionSort(records, compare);
-                        break;
-
-                    case "Insertion Sort":
-                        InsertionSort(records, compare);
-                        break;
-
-                    case "Merge Sort":
-                        MergeSort(records, 0,
-                            records.Count - 1, compare);
-                        break;
-
-                    case "Quick Sort":
-                        QuickSort(records, 0,
-                            records.Count - 1, compare);
-                        break;
-                }
-            }
-            finally
-            {
-                bs.RaiseListChangedEvents = previous;
-
-                if (previous)
-                    bs.ResetBindings(false);
-            }
-        }
-    
-
-       
-
         SqlDataAdapter adaptersql;
         string sql = null;
 
@@ -132,48 +37,9 @@ namespace Form1
 
             InitializeComponent();
 
+
         }
-
-        private void Maynilad_Load(object sender, EventArgs e)
-        {
-            connection.Open();
-            sql = "SELECT * FROM customerInfoTbl c " +
-                  "INNER JOIN meterTbl m ON c.soa_number = m.soa_number " +
-                  "INNER JOIN paymentTbl p ON c.soa_number = p.soa_number";
-            command = new SqlCommand(sql, connection);
-            command.CommandType = CommandType.Text;
-            adaptersql = new SqlDataAdapter();
-            adaptersql.SelectCommand = command;
-            command.ExecuteNonQuery();
-            dset = new DataSet();
-            adaptersql.Fill(dset, "waterbillall");
-            dataGridView1.DataSource = dset.Tables["waterbillall"];
-            connection.Close();
-
-            //sorting algorithm
-            comboBox1.Items.Add("Bubble Sort");
-            comboBox1.Items.Add("Selection Sort");
-            comboBox1.Items.Add("Insertion Sort");
-            comboBox1.Items.Add("Merge Sort");
-            comboBox1.Items.Add("Quick Sort");
-            //sort by
-            comboBox2.Items.Add("Statement of Account");
-            comboBox2.Items.Add("Account Name");
-            comboBox2.Items.Add("Service Address");
-            comboBox2.Items.Add("Meter No.");
-            comboBox2.Items.Add("Read Date");
-            comboBox2.Items.Add("Consumption");
-            comboBox2.Items.Add("Bill Period Input");
-            comboBox2.Items.Add("Bill Period Output");
-            comboBox2.Items.Add("Total Amount Due");
-            //sorting order
-            comboBox3.Items.Add("Ascending");
-            comboBox3.Items.Add("Descending");
-        }
-
-        private void BubbleSort(
-        IList records,
-        Comparison<object> compare)
+        private void BubbleSort(IList records, Comparison<object> compare)
         {
             int n = records.Count;
 
@@ -191,14 +57,7 @@ namespace Form1
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void SelectionSort(
-        IList records,
-        Comparison<object> compare)
+        private void SelectionSort(IList records, Comparison<object> compare)
         {
             int n = records.Count;
 
@@ -219,10 +78,7 @@ namespace Form1
                 records[min] = temp;
             }
         }
-
-        private void InsertionSort(
-        IList records,
-        Comparison<object> compare)
+        private void InsertionSort(IList records, Comparison<object> compare)
         {
             for (int i = 1; i < records.Count; i++)
             {
@@ -231,7 +87,7 @@ namespace Form1
                 int j = i - 1;
 
                 while (j >= 0 &&
-                    compare(records[j], key) > 0)
+                       compare(records[j], key) > 0)
                 {
                     records[j + 1] = records[j];
                     j--;
@@ -241,11 +97,7 @@ namespace Form1
             }
         }
 
-        private void MergeSort(
-        IList records,
-        int left,
-        int right,
-        Comparison<object> compare)
+        private void MergeSort(IList records, int left, int right, Comparison<object> compare)
         {
             if (left >= right)
                 return;
@@ -280,11 +132,7 @@ namespace Form1
                 records[left + x] = temp[x];
             }
         }
-        private void QuickSort(
-        IList records,
-        int low,
-        int high,
-        Comparison<object> compare)
+        private void QuickSort(IList records, int low, int high, Comparison<object> compare)
         {
             if (low >= high)
                 return;
@@ -296,11 +144,7 @@ namespace Form1
             QuickSort(records, pivotIndex + 1, high, compare);
         }
 
-        private int Partition(
-            IList records,
-            int low,
-            int high,
-            Comparison<object> compare)
+        private int Partition(IList records, int low, int high, Comparison<object> compare)
         {
             object pivot = records[high];
 
@@ -324,30 +168,93 @@ namespace Form1
 
             return i + 1;
         }
+        // Your columns are VARCHAR, so this compares numbers as numbers and dates as dates
+        // (otherwise "9" would sort after "100").
+        private static int SmartCompare(object x, object y)
+        {
+            if (x == null || x == DBNull.Value)
+                return (y == null || y == DBNull.Value) ? 0 : -1;
+
+            if (y == null || y == DBNull.Value)
+                return 1;
+
+            if (x is string && y is string)
+            {
+                string sx = ((string)x).Trim();
+                string sy = ((string)y).Trim();
+
+                decimal dx, dy;
+                if (decimal.TryParse(sx, NumberStyles.Any, CultureInfo.InvariantCulture, out dx) &&
+                    decimal.TryParse(sy, NumberStyles.Any, CultureInfo.InvariantCulture, out dy))
+                    return dx.CompareTo(dy);
+
+                DateTime tx, ty;
+                if (DateTime.TryParse(sx, CultureInfo.InvariantCulture, DateTimeStyles.None, out tx) &&
+                    DateTime.TryParse(sy, CultureInfo.InvariantCulture, DateTimeStyles.None, out ty))
+                    return tx.CompareTo(ty);
+
+                return string.Compare(sx, sy, StringComparison.OrdinalIgnoreCase);
+            }
+
+            return Comparer.DefaultInvariant.Compare(x, y);
+        }
+        private void Maynilad_Load(object sender, EventArgs e)
+        {
+            connection.Open();
+            sql = "SELECT * FROM customerInfoTbl c " +
+                  "INNER JOIN meterTbl m ON c.soa_number = m.soa_number " +
+                  "INNER JOIN paymentTbl p ON c.soa_number = p.soa_number";
+            command = new SqlCommand(sql, connection);
+            command.CommandType = CommandType.Text;
+            adaptersql = new SqlDataAdapter();
+            adaptersql.SelectCommand = command;
+            command.ExecuteNonQuery();
+            dset = new DataSet();
+            adaptersql.Fill(dset, "waterbillall");
+            dataGridView1.DataSource = dset.Tables["waterbillall"];
+            connection.Close();
+
+            comboBox1.Items.Add("Bubble Sort");
+            comboBox1.Items.Add("Selection Sort");
+            comboBox1.Items.Add("Insertion Sort");
+            comboBox1.Items.Add("Merge Sort");
+            comboBox1.Items.Add("Quick Sort");
+
+            comboBox2.Items.Add("Ascending");
+            comboBox2.Items.Add("Descending");
+
+            comboBox3.Items.Add("Statement of Account");
+            comboBox3.Items.Add("Account Name");
+            comboBox3.Items.Add("Service Address");
+            comboBox3.Items.Add("Meter No.");
+            comboBox3.Items.Add("Read Date");
+            comboBox3.Items.Add("Consumption");
+            comboBox3.Items.Add("Bill Period Input");
+            comboBox3.Items.Add("Bill Period Output");
+            comboBox3.Items.Add("Total Amount Due");
+
+        }
+
         private void MSC_TextChanged(object sender, EventArgs e)
         {
 
         }
-        
+        private double rate = 23.52, msc = 1.53;
         private void button1_Click(object sender, EventArgs e)
         {
-            present = Convert.ToDouble(Present.Text);
-            previous = Convert.ToDouble(Previous.Text);
+            double cons = Convert.ToDouble(Present.Text) - Convert.ToDouble(Previous.Text);
+            double basic = Math.Round(rate * cons, 2);
+            double env = Math.Round(basic * 0.20, 2);
+            double before = basic + env + msc;
+            double tax = Math.Round(before * 0.025, 2);
+            double total = before + tax;
 
-            consumption = present - previous;
-
-            basic = rate * consumption;
-            env = basic * 0.20;
-            beforetax = basic + env + msc;
-            govtax = beforetax * 0.025;
-            total = beforetax + govtax;
-
-            Consumption.Text = consumption.ToString();
+            Consumption.Text = cons.ToString();
             Basic.Text = basic.ToString("n");
             Env.Text = env.ToString("n");
             MSC.Text = msc.ToString("n");
-            Beforetax.Text = beforetax.ToString("n");
-            GovTax.Text = govtax.ToString("n");
+            Beforetax.Text = before.ToString("n");
+            GovTax.Text = tax.ToString("n");
             Total.Text = total.ToString("n");
             Current.Text = total.ToString("n");
 
@@ -384,6 +291,107 @@ namespace Form1
         {
 
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            // 1. Get the DataTable behind the grid
+            object source = dataGridView1.DataSource;
+            DataTable dt = null;
+
+            if (source is DataTable)
+            {
+                dt = (DataTable)source;
+            }
+            else if (source is BindingSource)
+            {
+                BindingSource b = (BindingSource)source;
+                dt = b.DataSource as DataTable;
+                if (dt == null && b.List is DataView)
+                    dt = ((DataView)b.List).Table;
+            }
+            else if (source is DataView)
+            {
+                dt = ((DataView)source).Table;
+            }
+
+            if (dt == null || dt.Rows.Count == 0)
+            {
+                MessageBox.Show("No records found.");
+                return;
+            }
+
+            // 2. Pick which column to sort by.
+            //    Try BOTH the raw DB name AND the alias used by waterbillview.
+            string[] candidates;
+            switch (comboBox3.Text)                          // ✅ was comboBox2
+            {
+                case "Statement of Account": candidates = new[] { "soa_number", "SOA Number" }; break;
+                case "Account Name": candidates = new[] { "account_name", "Customer Name" }; break;
+                case "Service Address": candidates = new[] { "service_address", "Customer Address" }; break;
+                case "Meter No.": candidates = new[] { "meter_no", "Meter No." }; break;
+                case "Read Date": candidates = new[] { "reading_date", "Reading Date" }; break;
+                case "Consumption": candidates = new[] { "consumption", "Consumption" }; break;
+                case "Bill Period Input": candidates = new[] { "billing_period", "Billing Period" }; break;
+                case "Bill Period Output": candidates = new[] { "billing_period", "Billing Period" }; break;
+                case "Total Amount Due": candidates = new[] { "total_amount_due", "Total Amount Due" }; break;
+                default:
+                    MessageBox.Show("Please select a valid sort field.");
+                    return;
+            }
+
+            // 3. Find the first candidate that actually exists
+            string column = null;
+            foreach (string c in candidates)
+                if (dt.Columns.Contains(c)) { column = c; break; }
+
+            if (column == null)
+            {
+                string names = string.Join(", ", dt.Columns.Cast<DataColumn>().Select(c => c.ColumnName));
+                MessageBox.Show("Column '" + candidates[0] + "' not found.\nAvailable:\n" + names);
+                return;
+            }
+
+            // 4. Ascending / Descending
+            bool descending = comboBox2.Text == "Descending";          // ✅ was comboBox3
+
+            // 5. Comparison (uses your existing SmartCompare)
+            Comparison<object> compare = (a, b) =>
+            {
+                object x = ((DataRow)a)[column];
+                object y = ((DataRow)b)[column];
+                int result = SmartCompare(x, y);
+                return descending ? -result : result;
+            };
+
+            // 6. Copy to a List<DataRow> so we can swap by index
+            List<DataRow> rows = new List<DataRow>(dt.Rows.Count);
+            foreach (DataRow r in dt.Rows) rows.Add(r);
+
+            // 7. Run the chosen algorithm
+            switch (comboBox1.Text)
+            {
+                case "Bubble Sort": BubbleSort(rows, compare); break;
+                case "Selection Sort": SelectionSort(rows, compare); break;
+                case "Insertion Sort": InsertionSort(rows, compare); break;
+                case "Merge Sort": MergeSort(rows, 0, rows.Count - 1, compare); break;
+                case "Quick Sort": QuickSort(rows, 0, rows.Count - 1, compare); break;
+                default:
+                    MessageBox.Show("Please select a sorting algorithm.");
+                    return;
+            }
+
+            // 8. Rebuild a fresh DataTable in sorted order and rebind
+            DataTable sorted = dt.Clone();
+            foreach (DataRow r in rows) sorted.ImportRow(r);
+            dataGridView1.DataSource = sorted;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
 
         private void button2_Click(object sender, EventArgs e)
         {
