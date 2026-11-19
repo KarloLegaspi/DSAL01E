@@ -101,6 +101,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -109,6 +117,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // label32
@@ -685,7 +694,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(393, 308);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(661, 381);
+            this.dataGridView1.Size = new System.Drawing.Size(661, 254);
             this.dataGridView1.TabIndex = 58;
             // 
             // openFileDialog1
@@ -695,7 +704,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button1.Location = new System.Drawing.Point(393, 695);
+            this.button1.Location = new System.Drawing.Point(393, 568);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(143, 24);
             this.button1.TabIndex = 60;
@@ -706,7 +715,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button2.Location = new System.Drawing.Point(541, 695);
+            this.button2.Location = new System.Drawing.Point(541, 568);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 24);
             this.button2.TabIndex = 61;
@@ -717,7 +726,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button3.Location = new System.Drawing.Point(627, 695);
+            this.button3.Location = new System.Drawing.Point(627, 568);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(102, 24);
             this.button3.TabIndex = 62;
@@ -727,7 +736,7 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button4.Location = new System.Drawing.Point(734, 695);
+            this.button4.Location = new System.Drawing.Point(734, 568);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(112, 24);
             this.button4.TabIndex = 63;
@@ -737,7 +746,7 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button5.Location = new System.Drawing.Point(851, 695);
+            this.button5.Location = new System.Drawing.Point(851, 568);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(112, 24);
             this.button5.TabIndex = 64;
@@ -747,7 +756,7 @@
             // button6
             // 
             this.button6.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button6.Location = new System.Drawing.Point(968, 695);
+            this.button6.Location = new System.Drawing.Point(968, 568);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(86, 24);
             this.button6.TabIndex = 65;
@@ -781,6 +790,83 @@
             this.textBox2.Size = new System.Drawing.Size(125, 20);
             this.textBox2.TabIndex = 67;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(6, 32);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 68;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(148, 32);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 69;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(6, 82);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.TabIndex = 70;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(148, 82);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(121, 23);
+            this.button7.TabIndex = 71;
+            this.button7.Text = "Apply Sorting";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.label36);
+            this.groupBox7.Controls.Add(this.label35);
+            this.groupBox7.Controls.Add(this.label34);
+            this.groupBox7.Controls.Add(this.comboBox2);
+            this.groupBox7.Controls.Add(this.button7);
+            this.groupBox7.Controls.Add(this.comboBox1);
+            this.groupBox7.Controls.Add(this.comboBox3);
+            this.groupBox7.Location = new System.Drawing.Point(393, 601);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(277, 126);
+            this.groupBox7.TabIndex = 72;
+            this.groupBox7.TabStop = false;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(6, 16);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(86, 13);
+            this.label34.TabIndex = 72;
+            this.label34.Text = "Sorting Algorithm";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(145, 16);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(41, 13);
+            this.label35.TabIndex = 73;
+            this.label35.Text = "Sort By";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(6, 66);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(69, 13);
+            this.label36.TabIndex = 74;
+            this.label36.Text = "Sorting Order";
+            // 
             // Maynilad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -788,6 +874,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1095, 747);
+            this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button6);
@@ -825,6 +912,8 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -904,5 +993,13 @@
         private System.Windows.Forms.TextBox ReadingDate;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
     }
 }
